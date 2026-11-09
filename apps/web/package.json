@@ -1,0 +1,29 @@
+{
+  "name": "@landing/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "react-router dev",
+    "build": "react-router build",
+    "preview": "node ../../scripts/preview.mjs",
+    "typecheck": "react-router typegen && tsc --noEmit"
+  },
+  "dependencies": {
+    "@fontsource-variable/dm-sans": "^5.3.0",
+    "@fontsource/josefin-sans": "^5.3.0",
+    "@landing/blocks": "*",
+    "@landing/core": "*",
+    "@react-router/node": "^8.5.1",
+    "isbot": "^5.2.3",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router": "^8.5.1"
+  },
+  "devDependencies": {
+    "@react-router/dev": "^8.5.1",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "vite": "^8.3.7"
+  }
+}

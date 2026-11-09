@@ -1,0 +1,98 @@
+.aud {
+  position: relative;
+  padding: 112px 0 128px;
+  overflow: hidden;
+  background: var(--c-bg);
+}
+.aud-glow {
+  position: absolute;
+  left: 50%;
+  bottom: -300px;
+  width: 1100px;
+  height: 760px;
+  margin-left: -550px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--c-text) 9%, transparent), transparent);
+}
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  margin-top: 56px;
+}
+.split .divider {
+  background: color-mix(in srgb, var(--c-text) 18%, transparent);
+}
+.path {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 8px 80px 8px 0;
+}
+.path + .divider + .path {
+  padding: 8px 0 8px 80px;
+}
+.path h3 {
+  font: 300 clamp(40px, 4.4vw, 56px) / 1.1 var(--font-display);
+  margin: 0;
+}
+.path p {
+  margin: 0;
+  color: var(--c-muted);
+}
+.path ul {
+  list-style: none;
+  margin: 0;
+  padding: 8px 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.path li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.path li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--c-highlight);
+  flex: none;
+}
+.path .btn {
+  align-self: flex-start;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .js .split .divider {
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 1.4s cubic-bezier(0.65, 0, 0.35, 1) 0.2s;
+  }
+  .js .split.in .divider {
+    transform: scaleY(1);
+  }
+}
+@media (prefers-reduced-motion: no-preference) and (max-width: 900px) {
+  .js .split .divider {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  .js .split.in .divider {
+    transform: scaleX(1);
+  }
+}
+@media (max-width: 900px) {
+  .split {
+    grid-template-columns: 1fr;
+  }
+  .split .divider {
+    height: 1px;
+    margin: 48px 0;
+  }
+  .path,
+  .path + .divider + .path {
+    padding: 0;
+  }
+}

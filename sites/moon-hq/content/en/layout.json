@@ -1,0 +1,140 @@
+{
+  "$schema": "../../../../schemas/layout.schema.json",
+  "brand": {
+    "name": "MOON HQ",
+    "homeLabel": "Moon HQ home",
+    "backToTopLabel": "Back to top"
+  },
+  "nav": {
+    "links": [
+      { "label": "How it works", "href": "#how-it-works" },
+      { "label": "Features", "href": "#features" },
+      { "label": "For companies", "href": "#who-its-for" },
+      { "label": "Docs", "toast": "The docs are being written. Here’s the short version: build it, say “deploy”, share it." }
+    ],
+    "mobileLinks": [
+      { "label": "How it works", "href": "#how-it-works" },
+      { "label": "Features", "href": "#features" },
+      { "label": "For companies", "href": "#who-its-for" }
+    ],
+    "actions": [
+      { "label": "Sign in", "dialog": "signin" },
+      { "label": "Start building", "dialog": "start", "variant": "primary" }
+    ],
+    "menuOpenLabel": "Open menu",
+    "menuCloseLabel": "Close menu"
+  },
+  "footer": {
+    "links": [
+      { "label": "Pricing", "toast": "Pricing is coming soon." },
+      { "label": "Docs", "toast": "The docs are being written." },
+      { "label": "Security", "href": "#features" },
+      { "label": "Status", "toast": "All systems running." },
+      { "label": "Contact", "dialog": "demo" }
+    ],
+    "copyright": "© 2026 Moon HQ",
+    "languageLabel": "Language"
+  },
+  "closeLabel": "Close",
+  "dialogs": [
+    {
+      "id": "signin",
+      "title": "Sign in",
+      "text": "One login for every Moon HQ app you have access to.",
+      "actions": [
+        { "label": "Continue with passkey", "variant": "primary", "toast": "Your device would now ask for your passkey." },
+        { "label": "Continue with company SSO", "variant": "ghost", "toast": "You’d now be sent to your company’s sign-in page." }
+      ],
+      "divider": "or",
+      "form": {
+        "fields": [
+          {
+            "name": "email",
+            "label": "Email",
+            "type": "email",
+            "placeholder": "you@company.com",
+            "autocomplete": "email",
+            "required": true,
+            "errors": {
+              "required": "Enter your email address.",
+              "invalid": "Enter an email address like you@company.com."
+            }
+          }
+        ],
+        "submit": { "label": "Continue with email", "variant": "ghost" },
+        "success": { "type": "toast", "message": "Sign-in link sent to {email}." }
+      }
+    },
+    {
+      "id": "start",
+      "title": "Start building",
+      "text": "Create your Moon HQ account. Your first app can be live in a few minutes.",
+      "form": {
+        "fields": [
+          {
+            "name": "email",
+            "label": "Email",
+            "type": "email",
+            "placeholder": "you@example.com",
+            "autocomplete": "email",
+            "required": true,
+            "errors": {
+              "required": "Enter your email address.",
+              "invalid": "Enter an email address like you@company.com."
+            }
+          }
+        ],
+        "submit": { "label": "Create account", "variant": "primary" },
+        "note": "You’ll set up a passkey next. No password needed.",
+        "success": {
+          "type": "done",
+          "title": "Account created",
+          "text": "We sent a sign-in link to {email}. Open it on this device to set up your passkey.",
+          "button": "Done"
+        }
+      }
+    },
+    {
+      "id": "demo",
+      "title": "Book a demo",
+      "text": "We’ll show you how Moon HQ fits your SSO, roles and audit needs.",
+      "form": {
+        "fields": [
+          {
+            "name": "name",
+            "label": "Name",
+            "type": "text",
+            "autocomplete": "name",
+            "required": true,
+            "errors": { "required": "Enter your name." }
+          },
+          {
+            "name": "email",
+            "label": "Work email",
+            "type": "email",
+            "placeholder": "you@company.com",
+            "autocomplete": "email",
+            "required": true,
+            "errors": {
+              "required": "Enter your email address.",
+              "invalid": "Enter an email address like you@company.com."
+            }
+          },
+          {
+            "name": "size",
+            "label": "Team size",
+            "type": "select",
+            "options": ["1–20 people", "21–200 people", "201–1,000 people", "More than 1,000"]
+          }
+        ],
+        "submit": { "label": "Book a demo", "variant": "primary" },
+        "success": {
+          "type": "done",
+          "title": "Demo booked",
+          "text": "We’ll email {email} to find a time that suits you.",
+          "button": "Done"
+        }
+      }
+    }
+  ]
+}

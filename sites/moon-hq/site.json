@@ -1,0 +1,9 @@
+{
+  "$schema": "../../schemas/site.schema.json",
+  "name": "Moon HQ",
+  "defaultLocale": "en",
+  "locales": [
+    { "code": "en", "label": "EN" },
+    { "code": "de", "label": "DE" }
+  ]
+}

@@ -1,0 +1,24 @@
+/*
+ * Moon HQ theme. Fonts are self-hosted (bundled from npm) — no requests to
+ * Google Fonts at runtime.
+ */
+@import "@fontsource-variable/dm-sans/opsz.css";
+@import "@fontsource/josefin-sans/300.css";
+@import "@fontsource/josefin-sans/400.css";
+
+:root {
+  --c-bg: #130e17; /* midnight */
+  --c-bg-deep: #0b090d;
+  --c-surface: #221f28; /* deep */
+  --c-ink: #36313b; /* night — text on light sections */
+  --c-text: #f7f4f0; /* moon */
+  --c-muted: #9da2ba; /* haze */
+  --c-accent: #4f63e6; /* signal */
+  --c-accent-hover: #3f52d6;
+  --c-accent-press: #3243b8;
+  --c-highlight: #8f9eff; /* sky */
+  --c-day: #f4ece6;
+
+  --font-display: "Josefin Sans", "Futura", "Century Gothic", "Avenir Next", sans-serif;
+  --font-body: "DM Sans Variable", "DM Sans", "Helvetica Neue", Arial, sans-serif;
+}

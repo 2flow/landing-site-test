@@ -1,0 +1,25 @@
+{
+  "name": "landing-sites",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=22.22"
+  },
+  "scripts": {
+    "dev": "npm run dev -w @landing/web",
+    "build": "npm run validate && npm run build -w @landing/web",
+    "preview": "npm run preview -w @landing/web",
+    "validate": "tsx scripts/validate.ts",
+    "schema": "tsx scripts/generate-schema.ts",
+    "typecheck": "npm run typecheck -w @landing/web"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}

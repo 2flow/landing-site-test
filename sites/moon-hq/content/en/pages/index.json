@@ -1,0 +1,94 @@
+{
+  "$schema": "../../../../../schemas/page.schema.json",
+  "meta": {
+    "title": "Moon HQ — One login for every app you build",
+    "description": "Hosting and one secure login for AI-built apps. Say “deploy” and your app runs at its own address, with a database and backups."
+  },
+  "blocks": [
+    {
+      "type": "hero",
+      "eyebrow": "Hosting + one login for AI-built apps",
+      "title": "One login for every app you build.",
+      "text": "Built a tracker, a dashboard or an internal tool with Claude Code? Say “deploy” and it runs — at its own address, with a database and backups, behind one calm, secure sign-in.",
+      "actions": [
+        { "label": "Start building", "variant": "primary", "dialog": "start" },
+        { "label": "Book a demo for your team", "variant": "ghost", "dialog": "demo" }
+      ],
+      "note": "Passkeys, MFA and company SSO built in. No servers to manage.",
+      "image": { "src": "/images/moon-surface.webp", "position": "50% 60%" },
+      "panel": {
+        "label": "Example: your apps in Moon HQ",
+        "title": "Your apps",
+        "meta": "3 apps, one login",
+        "tiles": [
+          { "status": "running", "statusLabel": "Running", "name": "Habit tracker", "url": "habits.moonhq.app", "sharing": "Only you" },
+          { "status": "running", "statusLabel": "Running", "name": "Sales dashboard", "url": "sales.moonhq.app", "sharing": "Shared with Sales, 12 people" }
+        ],
+        "terminal": [
+          { "command": "deploy onboarding tool", "output": "Live at onboarding.moonhq.app, database ready, backups on" },
+          { "command": "deploy expense tracker", "output": "Live at expenses.moonhq.app, database ready, backups on" },
+          { "command": "share expenses with Finance", "output": "Shared with Finance, 8 people, same login" },
+          { "command": "end session on old laptop", "output": "Session ended. Every app signs that device out" }
+        ]
+      }
+    },
+    {
+      "type": "steps",
+      "id": "how-it-works",
+      "eyebrow": "How it works",
+      "title": "From prompt to running app in three steps",
+      "background": "dunes",
+      "items": [
+        { "title": "Build it with AI", "text": "Make your app with Claude Code or any AI tool you like. Moon HQ doesn’t mind how it was written." },
+        { "title": "Say “deploy”", "text": "It goes live at its own address, with a database and automatic backups. No servers, no configuration." },
+        { "title": "Share it, sign in once", "text": "Invite people by email or open it to your whole organisation. Everyone uses the same Moon HQ login." }
+      ]
+    },
+    {
+      "type": "cards",
+      "id": "features",
+      "eyebrow": "What you get",
+      "title": "Everything around your app, handled quietly",
+      "image": { "src": "/images/moon-surface.webp", "position": "78% 85%" },
+      "items": [
+        { "title": "One login everywhere", "text": "People sign in once and are recognised in every app they can access. Your apps never build their own login." },
+        { "title": "Passkeys, MFA and SSO", "text": "Strong sign-in without the setup: passkeys and authenticator codes for people, single sign-on for companies." },
+        { "title": "Its own address", "text": "Every app gets a clean web address, like habits.moonhq.app." },
+        { "title": "Database and backups", "text": "Each app has its own database, backed up automatically." },
+        { "title": "Sharing and roles", "text": "Share by email or with a whole organisation, and decide who can do what." },
+        { "title": "Sessions and audit log", "text": "See every active session, end any of them, and keep a record of who did what." }
+      ]
+    },
+    {
+      "type": "split",
+      "id": "who-its-for",
+      "eyebrow": "Who it’s for",
+      "title": "Built for makers. Ready for companies.",
+      "columns": [
+        {
+          "title": "For builders",
+          "text": "You built something useful with AI and just want it running. Deploy it, share it, and forget about servers.",
+          "bullets": ["Deploy with one command", "Its own address for every app", "Share by email in seconds"],
+          "action": { "label": "Start building", "variant": "primary", "dialog": "start" }
+        },
+        {
+          "title": "For companies",
+          "text": "Give the tools your employees build a controlled home: one sign-in through your SSO, clear ownership and a full audit trail.",
+          "bullets": ["Company SSO, passkeys and MFA", "Organisations, roles and sharing", "Sessions and audit log for admins"],
+          "action": { "label": "Book a demo", "variant": "ghost", "dialog": "demo" }
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Your apps, one quiet home.",
+      "text": "Start on your own in minutes, or talk to us about bringing Moon HQ to your company.",
+      "actions": [
+        { "label": "Start building", "variant": "primary", "dialog": "start" },
+        { "label": "Book a demo for your team", "variant": "ghost", "dialog": "demo" }
+      ],
+      "mark": true,
+      "background": "horizon"
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+.final {
+  --planet-1: #5a4e5e;
+  --planet-2: #3a3240;
+  --planet-3: #241e29;
+  --planet-4: #17121a;
+  --planet-glow: rgba(214, 200, 224, 0.28);
+
+  position: relative;
+  padding: 128px 0 360px;
+  text-align: center;
+  overflow: hidden;
+  background: linear-gradient(
+    to bottom,
+    var(--c-bg),
+    color-mix(in srgb, var(--c-bg-deep) 70%, var(--c-bg)) 45%,
+    var(--c-bg-deep)
+  );
+}
+.final-plain {
+  padding-bottom: 128px;
+}
+.stars {
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  background-image:
+    radial-gradient(1px 1px at 12% 22%, rgba(247, 244, 240, 0.5), transparent),
+    radial-gradient(1px 1px at 78% 14%, rgba(247, 244, 240, 0.35), transparent),
+    radial-gradient(1px 1px at 63% 38%, rgba(247, 244, 240, 0.25), transparent),
+    radial-gradient(1px 1px at 27% 48%, rgba(247, 244, 240, 0.2), transparent),
+    radial-gradient(1px 1px at 88% 52%, rgba(247, 244, 240, 0.3), transparent);
+}
+.planet {
+  position: absolute;
+  left: 50%;
+  top: calc(100% - 300px);
+  width: 3000px;
+  height: 3000px;
+  margin-left: -1700px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 62% 0%,
+    var(--planet-1) 0%,
+    var(--planet-2) 6%,
+    var(--planet-3) 16%,
+    var(--planet-4) 32%
+  );
+  box-shadow:
+    0 -1px 2px rgba(247, 244, 240, 0.75),
+    0 -6px 22px var(--planet-glow),
+    0 -40px 120px rgba(160, 150, 200, 0.16),
+    inset 0 3px 10px rgba(247, 244, 240, 0.35);
+  will-change: transform;
+}
+.planet::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 50%;
+  box-shadow:
+    0 -12px 70px rgba(214, 200, 224, 0.32),
+    0 -2px 8px rgba(247, 244, 240, 0.35);
+  opacity: 0.4;
+}
+.final .wrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+.final .mark {
+  width: 90px;
+  fill: var(--c-text);
+}
+.final .body-l {
+  text-align: center;
+  max-width: 560px;
+  margin: 0;
+}
+.final-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding-top: 16px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .planet::before {
+    animation: breathe 7s ease-in-out infinite alternate;
+  }
+  @keyframes breathe {
+    from {
+      opacity: 0.25;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+@media (max-width: 900px) {
+  .final-horizon {
+    padding-bottom: 300px;
+  }
+}

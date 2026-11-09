@@ -1,0 +1,94 @@
+{
+  "$schema": "../../../../../schemas/page.schema.json",
+  "meta": {
+    "title": "Moon HQ — Ein Login für jede App, die du baust",
+    "description": "Hosting und ein sicherer Login für KI-gebaute Apps. Sag „deploy“ und deine App läuft unter eigener Adresse, mit Datenbank und Backups."
+  },
+  "blocks": [
+    {
+      "type": "hero",
+      "eyebrow": "Hosting + ein Login für KI-gebaute Apps",
+      "title": "Ein Login für jede App, die du baust.",
+      "text": "Einen Tracker, ein Dashboard oder ein internes Tool mit Claude Code gebaut? Sag „deploy“ und es läuft – unter eigener Adresse, mit Datenbank und Backups, hinter einer ruhigen, sicheren Anmeldung.",
+      "actions": [
+        { "label": "Jetzt starten", "variant": "primary", "dialog": "start" },
+        { "label": "Demo für dein Team buchen", "variant": "ghost", "dialog": "demo" }
+      ],
+      "note": "Passkeys, MFA und Firmen-SSO inklusive. Keine Server zu verwalten.",
+      "image": { "src": "/images/moon-surface.webp", "position": "50% 60%" },
+      "panel": {
+        "label": "Beispiel: deine Apps in Moon HQ",
+        "title": "Deine Apps",
+        "meta": "3 Apps, ein Login",
+        "tiles": [
+          { "status": "running", "statusLabel": "Läuft", "name": "Habit-Tracker", "url": "habits.moonhq.app", "sharing": "Nur du" },
+          { "status": "running", "statusLabel": "Läuft", "name": "Sales-Dashboard", "url": "sales.moonhq.app", "sharing": "Geteilt mit Sales, 12 Personen" }
+        ],
+        "terminal": [
+          { "command": "deploy onboarding tool", "output": "Live unter onboarding.moonhq.app, Datenbank bereit, Backups aktiv" },
+          { "command": "deploy expense tracker", "output": "Live unter expenses.moonhq.app, Datenbank bereit, Backups aktiv" },
+          { "command": "share expenses with Finance", "output": "Geteilt mit Finance, 8 Personen, gleicher Login" },
+          { "command": "end session on old laptop", "output": "Sitzung beendet. Jede App meldet dieses Gerät ab" }
+        ]
+      }
+    },
+    {
+      "type": "steps",
+      "id": "how-it-works",
+      "eyebrow": "So funktioniert’s",
+      "title": "Vom Prompt zur laufenden App in drei Schritten",
+      "background": "dunes",
+      "items": [
+        { "title": "Mit KI bauen", "text": "Bau deine App mit Claude Code oder einem anderen KI-Tool deiner Wahl. Moon HQ ist egal, wie sie entstanden ist." },
+        { "title": "„deploy“ sagen", "text": "Sie geht unter eigener Adresse live, mit Datenbank und automatischen Backups. Keine Server, keine Konfiguration." },
+        { "title": "Teilen, einmal anmelden", "text": "Lade Leute per E-Mail ein oder öffne die App für deine ganze Organisation. Alle nutzen denselben Moon-HQ-Login." }
+      ]
+    },
+    {
+      "type": "cards",
+      "id": "features",
+      "eyebrow": "Was du bekommst",
+      "title": "Alles rund um deine App, leise erledigt",
+      "image": { "src": "/images/moon-surface.webp", "position": "78% 85%" },
+      "items": [
+        { "title": "Ein Login überall", "text": "Einmal anmelden und in jeder App erkannt werden, auf die man Zugriff hat. Deine Apps bauen nie einen eigenen Login." },
+        { "title": "Passkeys, MFA und SSO", "text": "Starke Anmeldung ohne Einrichtungsaufwand: Passkeys und Authenticator-Codes für Personen, Single Sign-on für Unternehmen." },
+        { "title": "Eigene Adresse", "text": "Jede App bekommt eine saubere Webadresse, zum Beispiel habits.moonhq.app." },
+        { "title": "Datenbank und Backups", "text": "Jede App hat ihre eigene Datenbank, automatisch gesichert." },
+        { "title": "Teilen und Rollen", "text": "Teile per E-Mail oder mit der ganzen Organisation und lege fest, wer was darf." },
+        { "title": "Sitzungen und Audit-Log", "text": "Sieh jede aktive Sitzung, beende jede davon und halte fest, wer was getan hat." }
+      ]
+    },
+    {
+      "type": "split",
+      "id": "who-its-for",
+      "eyebrow": "Für wen",
+      "title": "Für Macher gebaut. Bereit für Unternehmen.",
+      "columns": [
+        {
+          "title": "Für Builder",
+          "text": "Du hast mit KI etwas Nützliches gebaut und willst, dass es einfach läuft. Deployen, teilen und Server vergessen.",
+          "bullets": ["Deploy mit einem Befehl", "Eigene Adresse für jede App", "In Sekunden per E-Mail teilen"],
+          "action": { "label": "Jetzt starten", "variant": "primary", "dialog": "start" }
+        },
+        {
+          "title": "Für Unternehmen",
+          "text": "Gib den Tools, die deine Mitarbeitenden bauen, ein kontrolliertes Zuhause: eine Anmeldung über euer SSO, klare Zuständigkeiten und ein lückenloses Audit-Log.",
+          "bullets": ["Firmen-SSO, Passkeys und MFA", "Organisationen, Rollen und Teilen", "Sitzungen und Audit-Log für Admins"],
+          "action": { "label": "Demo buchen", "variant": "ghost", "dialog": "demo" }
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Deine Apps, ein ruhiges Zuhause.",
+      "text": "Starte allein in wenigen Minuten oder sprich mit uns darüber, Moon HQ in dein Unternehmen zu bringen.",
+      "actions": [
+        { "label": "Jetzt starten", "variant": "primary", "dialog": "start" },
+        { "label": "Demo für dein Team buchen", "variant": "ghost", "dialog": "demo" }
+      ],
+      "mark": true,
+      "background": "horizon"
+    }
+  ]
+}

@@ -1,0 +1,258 @@
+/*
+ * Shared base styles for all blocks.
+ * Sites override the tokens in sites/<site>/theme.css — never hard-code
+ * brand colours in block CSS.
+ */
+/* Token defaults live in a layer so a site's theme.css (unlayered) always
+   wins, regardless of stylesheet order. */
+@layer defaults {
+  :root {
+    /* colour tokens (defaults; sites override) */
+    --c-bg: #130e17;
+    --c-bg-deep: #0b090d;
+    --c-surface: #221f28;
+    --c-ink: #36313b;
+    --c-text: #f7f4f0;
+    --c-muted: #9da2ba;
+    --c-accent: #4f63e6;
+    --c-accent-hover: #3f52d6;
+    --c-accent-press: #3243b8;
+    --c-highlight: #8f9eff;
+    --c-day: #f4ece6;
+    --c-error: #f0a3a3;
+    --c-error-border: #e58a8a;
+
+    --font-display: "Josefin Sans", "Futura", "Century Gothic", "Avenir Next", sans-serif;
+    --font-body: "DM Sans Variable", "DM Sans", "Helvetica Neue", Arial, sans-serif;
+
+    --nav-h: 64px;
+    --gutter: clamp(20px, 8.3vw, 120px);
+    --max-w: 1440px;
+  }
+}
+
+:root {
+  color-scheme: dark;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 72px);
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+body {
+  margin: 0;
+  background: var(--c-bg);
+  color: var(--c-text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  z-index: 60;
+  background: var(--c-bg);
+}
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+a {
+  color: inherit;
+}
+.wrap {
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* film grain overlay */
+.grain {
+  position: relative;
+  isolation: isolate;
+}
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.55;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .22 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+.grain > .wrap {
+  position: relative;
+  z-index: 2;
+}
+
+/* ---------- type ---------- */
+.eyebrow {
+  font: 500 13px/1.3 var(--font-body);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-highlight);
+  margin: 0 0 16px;
+}
+.h-display {
+  font: 300 clamp(44px, 6vw, 72px) / 1.1 var(--font-display);
+  margin: 0;
+  letter-spacing: 0;
+}
+.h-section {
+  font: 300 clamp(32px, 4vw, 44px) / 1.2 var(--font-display);
+  letter-spacing: 0.03em;
+  margin: 0;
+}
+.h-title {
+  font: 400 24px/1.3 var(--font-display);
+  margin: 0;
+}
+.body-l {
+  font-size: 18px;
+  color: var(--c-muted);
+  max-width: 34em;
+}
+.small {
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--c-muted);
+}
+
+/* ---------- buttons ---------- */
+.btn {
+  --h: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: var(--h);
+  padding: 0 24px;
+  border-radius: 12px;
+  font: 500 15px/1 var(--font-body);
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: none;
+  color: inherit;
+  transition:
+    background-color 0.15s ease-out,
+    border-color 0.15s ease-out,
+    transform 0.15s ease-out,
+    color 0.15s ease-out;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn:focus-visible {
+  outline: 2px solid var(--c-highlight);
+  outline-offset: 3px;
+}
+.btn:active {
+  transform: translateY(1px);
+}
+.btn-primary {
+  background: var(--c-accent);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: var(--c-accent-hover);
+}
+.btn-primary:active {
+  background: var(--c-accent-press);
+}
+.btn-ghost {
+  border-color: var(--c-muted);
+  color: var(--c-text);
+}
+.btn-ghost:hover {
+  background: color-mix(in srgb, var(--c-text) 8%, transparent);
+  border-color: color-mix(in srgb, var(--c-text) 60%, transparent);
+}
+.btn-ghost:active {
+  background: color-mix(in srgb, var(--c-text) 16%, transparent);
+}
+.btn-block {
+  width: 100%;
+}
+.link-btn {
+  background: none;
+  border: 0;
+  padding: 6px 2px;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: color 0.15s ease-out;
+}
+.link-btn:focus-visible {
+  outline: 2px solid var(--c-highlight);
+  outline-offset: 3px;
+}
+
+/* ---------- brand ---------- */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  border-radius: 8px;
+}
+.brand:focus-visible {
+  outline: 2px solid var(--c-highlight);
+  outline-offset: 4px;
+}
+.brand svg {
+  width: 28px;
+  height: auto;
+  fill: var(--c-text);
+}
+.wordmark {
+  font: 300 18px/1 var(--font-display);
+  letter-spacing: 0.1em;
+  padding-top: 3px;
+}
+@media (max-width: 520px) {
+  .wordmark {
+    font-size: 19px;
+  }
+}
+
+/* ---------- motion helpers ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .js .reveal-mark {
+    opacity: 0;
+    scale: 0.92;
+    transition:
+      opacity 1.2s ease-out,
+      scale 1.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .js .in .reveal-mark {
+    opacity: 1;
+    scale: 1;
+  }
+}

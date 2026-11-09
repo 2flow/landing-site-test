@@ -1,0 +1,140 @@
+{
+  "$schema": "../../../../schemas/layout.schema.json",
+  "brand": {
+    "name": "MOON HQ",
+    "homeLabel": "Moon HQ Startseite",
+    "backToTopLabel": "Nach oben"
+  },
+  "nav": {
+    "links": [
+      { "label": "So funktioniert’s", "href": "#how-it-works" },
+      { "label": "Funktionen", "href": "#features" },
+      { "label": "Für Unternehmen", "href": "#who-its-for" },
+      { "label": "Doku", "toast": "Die Doku entsteht gerade. Die Kurzfassung: bauen, „deploy“ sagen, teilen." }
+    ],
+    "mobileLinks": [
+      { "label": "So funktioniert’s", "href": "#how-it-works" },
+      { "label": "Funktionen", "href": "#features" },
+      { "label": "Für Unternehmen", "href": "#who-its-for" }
+    ],
+    "actions": [
+      { "label": "Anmelden", "dialog": "signin" },
+      { "label": "Jetzt starten", "dialog": "start", "variant": "primary" }
+    ],
+    "menuOpenLabel": "Menü öffnen",
+    "menuCloseLabel": "Menü schließen"
+  },
+  "footer": {
+    "links": [
+      { "label": "Preise", "toast": "Preise folgen in Kürze." },
+      { "label": "Doku", "toast": "Die Doku entsteht gerade." },
+      { "label": "Sicherheit", "href": "#features" },
+      { "label": "Status", "toast": "Alle Systeme laufen." },
+      { "label": "Kontakt", "dialog": "demo" }
+    ],
+    "copyright": "© 2026 Moon HQ",
+    "languageLabel": "Sprache"
+  },
+  "closeLabel": "Schließen",
+  "dialogs": [
+    {
+      "id": "signin",
+      "title": "Anmelden",
+      "text": "Ein Login für jede Moon-HQ-App, auf die du Zugriff hast.",
+      "actions": [
+        { "label": "Weiter mit Passkey", "variant": "primary", "toast": "Dein Gerät würde jetzt nach deinem Passkey fragen." },
+        { "label": "Weiter mit Firmen-SSO", "variant": "ghost", "toast": "Du würdest jetzt zur Anmeldeseite deines Unternehmens weitergeleitet." }
+      ],
+      "divider": "oder",
+      "form": {
+        "fields": [
+          {
+            "name": "email",
+            "label": "E-Mail",
+            "type": "email",
+            "placeholder": "du@firma.de",
+            "autocomplete": "email",
+            "required": true,
+            "errors": {
+              "required": "Gib deine E-Mail-Adresse ein.",
+              "invalid": "Gib eine E-Mail-Adresse wie du@firma.de ein."
+            }
+          }
+        ],
+        "submit": { "label": "Weiter mit E-Mail", "variant": "ghost" },
+        "success": { "type": "toast", "message": "Anmeldelink an {email} gesendet." }
+      }
+    },
+    {
+      "id": "start",
+      "title": "Jetzt starten",
+      "text": "Erstelle dein Moon-HQ-Konto. Deine erste App kann in wenigen Minuten live sein.",
+      "form": {
+        "fields": [
+          {
+            "name": "email",
+            "label": "E-Mail",
+            "type": "email",
+            "placeholder": "du@beispiel.de",
+            "autocomplete": "email",
+            "required": true,
+            "errors": {
+              "required": "Gib deine E-Mail-Adresse ein.",
+              "invalid": "Gib eine E-Mail-Adresse wie du@firma.de ein."
+            }
+          }
+        ],
+        "submit": { "label": "Konto erstellen", "variant": "primary" },
+        "note": "Als Nächstes richtest du einen Passkey ein. Kein Passwort nötig.",
+        "success": {
+          "type": "done",
+          "title": "Konto erstellt",
+          "text": "Wir haben einen Anmeldelink an {email} geschickt. Öffne ihn auf diesem Gerät, um deinen Passkey einzurichten.",
+          "button": "Fertig"
+        }
+      }
+    },
+    {
+      "id": "demo",
+      "title": "Demo buchen",
+      "text": "Wir zeigen dir, wie Moon HQ zu deinem SSO, deinen Rollen und deinen Audit-Anforderungen passt.",
+      "form": {
+        "fields": [
+          {
+            "name": "name",
+            "label": "Name",
+            "type": "text",
+            "autocomplete": "name",
+            "required": true,
+            "errors": { "required": "Gib deinen Namen ein." }
+          },
+          {
+            "name": "email",
+            "label": "Geschäftliche E-Mail",
+            "type": "email",
+            "placeholder": "du@firma.de",
+            "autocomplete": "email",
+            "required": true,
+            "errors": {
+              "required": "Gib deine E-Mail-Adresse ein.",
+              "invalid": "Gib eine E-Mail-Adresse wie du@firma.de ein."
+            }
+          },
+          {
+            "name": "size",
+            "label": "Teamgröße",
+            "type": "select",
+            "options": ["1–20 Personen", "21–200 Personen", "201–1.000 Personen", "Mehr als 1.000"]
+          }
+        ],
+        "submit": { "label": "Demo buchen", "variant": "primary" },
+        "success": {
+          "type": "done",
+          "title": "Demo gebucht",
+          "text": "Wir schreiben an {email}, um einen passenden Termin zu finden.",
+          "button": "Fertig"
+        }
+      }
+    }
+  ]
+}
